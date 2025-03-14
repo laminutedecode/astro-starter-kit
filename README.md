@@ -1,11 +1,9 @@
 # La Minute de code : Astro Starter Kit avec Sanity
 
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Dans votre projet Astro, vous verrez les dossiers et fichiers suivants:
 
 ```text
 /
@@ -29,6 +27,39 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 └── tsconfig.json
 ```
+
+## 🌟 Commencer
+
+Dans votre terminal, vous pouvez copier-coller cette commande.
+
+```bash
+git clone https://github.com/laminutedecode/astro-starter-kit
+```
+Une fois le repository cloné, vous devez exécuter quelques commandes à la racine du projet.
+```bash
+cd astro-starter-kit
+```
+
+### Vous devez installer les dépendances nécessaires.
+
+```bash
+npm install
+```
+
+### Ensuite, vous devez configurer le projet avec Sanity.
+```bash
+npm run config
+```
+
+# Intégration de Sanity avec Astro
+
+Ce projet utilise Astro comme framework front-end et Sanity comme CMS headless pour gérer le contenu. Sanity offre une interface flexible pour la gestion de contenu, tandis qu'Astro permet de générer des sites rapides et performants. Grâce à cette combinaison, tu peux facilement gérer du contenu dynamique tout en bénéficiant des avantages d'un site statique.
+
+### Fonctionnalités :
+ - Gestion de contenu avec Sanity
+ - Intégration fluide avec Astro
+ - Personnalisation des schémas de contenu
+ - API flexible pour récupérer les données sur le front-end
 
 ## 🧞 Commands
 
