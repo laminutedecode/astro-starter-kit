@@ -1,0 +1,32 @@
+{
+  "name": "starter-kit",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "config": "node config.js",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^6.2.3",
+    "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.2.1",
+    "@portabletext/react": "^3.2.1",
+    "@sanity/astro": "^3.2.6",
+    "@sanity/client": "^6.28.3",
+    "@tailwindcss/vite": "^4.0.14",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "astro": "^5.5.2",
+    "graphql-request": "^7.1.2",
+    "inquirer": "^12.4.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-is": "^19.0.0",
+    "sanity": "^3.79.0",
+    "styled-components": "^6.1.15",
+    "tailwindcss": "^4.0.14"
+  }
+}
