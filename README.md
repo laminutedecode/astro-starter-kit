@@ -15,6 +15,9 @@ Dans votre projet Astro, vous verrez les dossiers et fichiers suivants:
 │   │── favicon.svg
 │   │── logo.webp
 ├── src/
+│   ├─assets
+│   │   └── background.svg
+│   │   └── logo.webp
 │   ├─components
 │   │   └── Articles.jsx
 │   │   └── Welcome.astro
@@ -25,11 +28,11 @@ Dans votre projet Astro, vous verrez les dossiers et fichiers suivants:
 │   ├── styles/
 │   │   └── global.css
 ├── Studio
-└── astro.config.mjd
-└── config.js
-└── env.d.ts
-└── package.json
-└── tsconfig.json
+├── astro.config.mjd
+├── config.js
+├── env.d.ts
+├── package.json
+├── tsconfig.json
 ```
 
 ## 🌟 Commencer
@@ -82,4 +85,4 @@ Toutes les commandes sont exécutées depuis la racine du projet, à partir d'un
 
 ## 👀 Vous voulez en savoir plus ?
 
-N'hésitez pas à consulter  [la documentation](https://docs.astro.build) ou à rejoindre notre [Discord server](https://discord.gg/vR5PGsMF3q).
+N'hésitez pas à consulter  [la documentation](https://docs.astro.build) ou à rejoindre notre [Discord](https://discord.gg/vR5PGsMF3q).
