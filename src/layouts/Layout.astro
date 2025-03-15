@@ -4,6 +4,9 @@ import { SITE } from "@/config";
 import { LOCALE } from "@/constants";
 import "@/styles/global.css";
 
+// If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
+// Il faut inclure la balise google-site-verification dans l'en-tête.
+// En savoir plus : https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
@@ -13,9 +16,6 @@ export interface Props {
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
-  pubDatetime?: Date;
-  modDatetime?: Date | null;
-  scrollSmooth?: boolean;
 }
 
 const {
