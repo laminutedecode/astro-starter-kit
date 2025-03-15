@@ -24,9 +24,12 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        # Désactiver le cache temporairement
+        # cache: 'npm'
     - name: Install dependencies
-      run: npm ci || npm install
+      run: npm install
+    - name: Generate package-lock.json
+      run: npm i --package-lock-only
     - name: Build
       run: npm run build --if-present
       env:
