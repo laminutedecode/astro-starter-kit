@@ -7,10 +7,27 @@ const query = `*[_type == "post"] | order(publishedAt desc) {
   mainImage,
   publishedAt,
   excerpt,
+  body,
   "categories": categories[]->title
 }`;
 
 const posts = await sanityClient.fetch(query);
+
+// Fonction pour extraire le texte simple des blocs Portable Text
+function extractTextFromPortableText(portableText: any[]): string {
+  if (!portableText || !Array.isArray(portableText)) return '';
+  
+  return portableText
+    .map(block => {
+      if (block._type !== 'block' || !block.children) return '';
+      
+      return block.children
+        .map((child: any) => child.text || '')
+        .join(' ');
+    })
+    .filter(text => text.length > 0)
+    .join('\n\n');
+}
 ---
 
 <section class="articles">
@@ -26,6 +43,11 @@ const posts = await sanityClient.fetch(query);
         )}
         <div class="article-content">
           <h2>{post.title}</h2>
+          {post.body && (
+            <div class="article-body">
+              <p>{extractTextFromPortableText(post.body)}</p>
+            </div>
+          )}
           <div class="article-meta">
             <time datetime={post.publishedAt}>
               {new Date(post.publishedAt).toLocaleDateString('fr-FR')}
