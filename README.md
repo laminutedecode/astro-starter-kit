@@ -1,5 +1,5 @@
 # La Minute de code : Astro Starter Kit avec Sanity
-#À lire avant de commencer !
+## À lire avant de commencer !
 
 ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
