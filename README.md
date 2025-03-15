@@ -63,12 +63,13 @@ npm run config
 
 ## Le fichier config.ts
 
-Vous pouvez modifier le fichier ```config.ts``` pour y ajouter vos informations, par exemple.
-    - website: "https://VOTRE_URL/",
-    - author: "Votre nom",
-    - desc: "Description de votre site",
-    - title: "La Minute de Code",
-    - ogImage: "votrelogo-og.jpg",
+### Vous pouvez modifier le fichier ```config.ts``` pour y ajouter vos informations, par exemple :
+
+ - website: "https://VOTRE_URL/",
+ - author: "Votre nom",
+ - desc: "Description de votre site",
+ - title: "La Minute de Code",
+ - ogImage: "votrelogo-og.jpg",
 
 # Intégration de Sanity avec Astro
 
