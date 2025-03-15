@@ -30,6 +30,7 @@ Dans votre projet Astro, vous verrez les dossiers et fichiers suivants:
 │   └── config.ts
 │   └── constants.ts
 ├── Studio
+├── .env.example
 ├── astro.config.mjd
 ├── config.js
 ├── env.d.ts
