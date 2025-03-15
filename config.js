@@ -5,7 +5,6 @@ const FILES_TO_UPDATE = [
   'astro.config.mjs',
   './Studio/sanity.config.ts',
   './Studio/sanity.cli.ts',
-  'sanity.config.ts'
 ];
 
 // 🔹 Fonction pour demander les informations à l'utilisateur
