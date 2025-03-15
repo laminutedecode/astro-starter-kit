@@ -25,6 +25,7 @@ Dans votre projet Astro, vous verrez les dossiers et fichiers suivants:
 │   │   └── Layout.astro
 │   ├── pages/
 │   │   └── index.astro
+│   │   └── robots.txt.ts
 │   ├── styles/
 │   │   └── global.css
 │   └── config.ts
