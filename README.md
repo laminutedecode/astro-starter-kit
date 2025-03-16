@@ -23,7 +23,7 @@ Dans votre projet Astro, vous verrez les dossiers et fichiers suivants:
 │   │   └── background.svg
 │   │   └── logo.webp
 │   ├─components
-│   │   └── Articles.jsx
+│   │   └── Articles.astro
 │   │   └── Welcome.astro
 │   ├── layouts/
 │   │   └── Layout.astro
