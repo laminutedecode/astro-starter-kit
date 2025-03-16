@@ -13,7 +13,6 @@ const query = `*[_type == "post"] | order(publishedAt desc) {
 
 const posts = await sanityClient.fetch(query);
 
-// Fonction pour extraire le texte simple des blocs Portable Text
 function extractTextFromPortableText(portableText: any[]): string {
   if (!portableText || !Array.isArray(portableText)) return '';
   
@@ -28,43 +27,58 @@ function extractTextFromPortableText(portableText: any[]): string {
     .filter(text => text.length > 0)
     .join('\n\n');
 }
+
+function getOptimizedImageUrl(image: any) {
+  if (!image || !image.asset?.url) {
+    return '/default-og.webp'; // Assure-toi que ce fichier existe dans le répertoire public
+  }
+  return `${image.asset.url}?w=800&h=600&fit=crop&auto=format`;
+}
+
 ---
 
 <section class="articles">
   <div class="articles-grid">
     {posts.map((post: any) => (
-      <article class="article-card">
+      <article class="article-card" itemscope itemtype="https://schema.org/Article">
         {post.mainImage && (
           <img 
-            src={post.mainImage.asset?.url}
-            alt={post.title}
+            src={getOptimizedImageUrl(post.mainImage)}
+            alt={post.title || 'Article sans titre'}
             class="article-image"
+            loading="lazy"
+            itemprop="image"
           />
         )}
         <div class="article-content">
-          <h2>{post.title}</h2>
+          <header>
+            <h2 itemprop="headline">{post.title || 'Titre manquant'}</h2>
+          </header>
           {post.body && (
-            <div class="article-body">
+            <div class="article-body" itemprop="articleBody">
               <p>{extractTextFromPortableText(post.body)}</p>
             </div>
           )}
           <div class="article-meta">
-            <time datetime={post.publishedAt}>
+            <time datetime={post.publishedAt} itemprop="datePublished">
               {new Date(post.publishedAt).toLocaleDateString('fr-FR')}
             </time>
             {post.categories && (
               <div class="categories">
                 {post.categories.map((category: string) => (
-                  <span class="category">{category}</span>
+                  <span class="category" itemprop="about">{category}</span>
                 ))}
               </div>
             )}
           </div>
+          {/* Extrait de l'article pour la meta description */}
+          <meta name="description" content={post.excerpt || extractTextFromPortableText(post.body).slice(0, 150)} />
         </div>
       </article>
     ))}
   </div>
 </section>
+
 
 <style>
   .articles {

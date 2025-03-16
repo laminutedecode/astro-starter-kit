@@ -4,9 +4,7 @@ import { SITE } from "@/config";
 import { LOCALE } from "@/constants";
 import "@/styles/global.css";
 
-// If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-// Il faut inclure la balise google-site-verification dans l'en-tête.
-// En savoir plus : https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
+// Google Site Verification
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
@@ -30,7 +28,7 @@ const socialImageURL = new URL(ogImage, Astro.url);
 ---
 
 <!doctype html>
-<html lang=`${LOCALE.lang ?? "en"}`>
+<html lang={`${LOCALE.lang ?? "en"}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -51,7 +49,6 @@ const socialImageURL = new URL(ogImage, Astro.url);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
 
-
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
@@ -59,7 +56,7 @@ const socialImageURL = new URL(ogImage, Astro.url);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <meta name="theme-color" content="" />
+    <meta name="theme-color" content="#ffffff" />
 
     {
       googleSiteVerification && (
